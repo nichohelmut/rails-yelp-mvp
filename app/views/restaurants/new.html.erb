@@ -1,0 +1,26 @@
+<%= form_for(@restaurant) do |f| %>
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :address %>
+  <%= f.text_field :address, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :category %>
+  <%= f.select :category, Restaurant::CATEGORIES, prompt: "Choose one category" %>
+
+</div>
+
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
+<p><%= link_to "go back", restaurants_path %></p>
